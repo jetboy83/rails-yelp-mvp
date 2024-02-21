@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="card-title">Restaurant Details</h5>
+        </div>
+        <div class="card-body">
+          <%= simple_form_for @restaurant, html: { class: 'form-horizontal' } do |f| %>
+            <div class="form-group pb-2">
+              <%= f.input :name, input_html: { class: 'form-control' }, wrapper: false, label_html: { class: 'form-label' } %>
+            </div>
+            <div class="form-group pb-2">
+              <%= f.input :address, input_html: { class: 'form-control' }, wrapper: false, label_html: { class: 'form-label' } %>
+            </div>
+            <div class="form-group pb-2">
+              <%= f.input :phone_number, input_html: { class: 'form-control' }, wrapper: false, label_html: { class: 'form-label' } %>
+            </div>
+            <div class="form-group pb-2">
+              <%= f.input :category, collection: Restaurant::CATEGORIES, input_html: { class: 'form-select' }, wrapper: false, label_html: { class: 'form-label' } %>
+            </div>
+            <div class="form-group text-center">
+              <%= f.button :submit, "Submit Restaurant", class: "btn btn-primary" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h1 class="mb-4">Write a review for <%= @restaurant.name %></h1>
+      <%= simple_form_for [@restaurant, @review], html: { class: 'form-horizontal' } do |f| %>
+        <div class="form-group">
+          <%= f.input :content, as: :text, label: "Review Content", input_html: { class: "form-control", rows: 4 }, wrapper: false, label_html: { class: "form-label" } %>
+        </div>
+        <div class="form-group">
+          <%= f.input :rating, collection: 0..5, label: "Rating", include_blank: false, input_html: { class: "form-select" }, wrapper: false, label_html: { class: "form-label" } %>
+        </div>
+        <div class="form-group">
+          <%= f.button :submit, "Submit Review", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
